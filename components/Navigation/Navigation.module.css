@@ -1,0 +1,42 @@
+/* Estilos para la barra de navegación */
+.header {
+    position:static;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    height: 12%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 32px;
+    border-radius: 4px;
+    z-index: 999; /* Asegura que la barra esté por encima del contenido */
+    gap: 32px;
+}
+
+/* Estilos para los enlaces de navegación */
+.navigation {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+    font-weight: bolder;
+    letter-spacing: 2px;  
+}
+  
+  .navigation a {
+    /* Ajusta los estilos de tu enlace según tus necesidades */
+    color: rgb(243, 226, 27);
+    font-size: 16px;
+    text-decoration: none;
+    transition: box-shadow 0.5s ease-in-out; /* Agregamos una transición para el efecto hover */
+  }
+  
+  /* Efecto de luminosidad en el hover */
+  .navigation a:hover {
+    color: rgb(243, 226, 27);
+    text-size-adjust: 120%;
+    box-shadow: 0 0 10px rgba(243, 226, 27, 0.8),
+                0 0 40px rgba(243, 226, 27, 0.6),
+                0 0 60px rgba(243, 226, 27, 0.4);
+  }
+  
