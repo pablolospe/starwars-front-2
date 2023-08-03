@@ -46,17 +46,17 @@ function Navigation() {
         onClick={handleMenuToggle}
       >
         <div
-          className={`h-2 w-6 bg-yellow-400 transition ease-in-out duration-300 ${
+          className={`h-2 w-6 bg-yellow-400 transition ease-in-out duration-700 ${
             isMenuOpen ? 'rotate-45 translate-y-1.5' : ''
           }`}
         ></div>
         <div
-          className={`h-2 w-6 bg-yellow-400 mt-1 mb-1 transition ease-in-out duration-300 ${
+          className={`h-2 w-6 bg-yellow-400 mt-1 mb-1 transition ease-in-out duration-700 ${
             isMenuOpen ? 'opacity-0' : ''
           }`}
         ></div>
         <div
-          className={`h-2 w-6 bg-yellow-400 transition ease-in-out duration-300 ${
+          className={`h-2 w-6 bg-yellow-400 transition ease-in-out duration-700 ${
             isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
           }`}
         ></div>
@@ -72,7 +72,7 @@ function Navigation() {
           <li key={route}>
             <Link href={route}>
               <div
-                className="text-yellow-400 font-bold text-lg hover:shadow-yellow"
+                className="font-bold text-lg hover:shadow-yellow"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {label}

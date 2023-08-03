@@ -3,9 +3,9 @@ import Link from 'next/link';
 
 const characters = async () => {
   return fetch('http://34.125.251.76:8000/characters', {
-    next: {
-      revalidate: 60,
-    },
+    // next: {
+    //   revalidate: 60,
+    // },
   }).then((res) => res.json());
 };
 
@@ -25,7 +25,8 @@ async function Characters2() {
             <h5>{ch.name}</h5>
             {/* ({ch.films.map((f, index)=><small>{f.title}{index !== ch.films.length - 1 ? ', ' : ''} </small>)}) */}
             <img
-              style={{ alignItems: 'center', height: '240px', width: 'auto' }}
+              className='items-center h-52 w-auto'
+              // style={{ alignItems: 'center', height: '240px', width: 'auto' }}
               src={`https://starwars-visualguide.com/assets/img/characters/${ch._id}.jpg`}
               alt={`Character picture of '${ch.name}'.`}
             />
