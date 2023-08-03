@@ -1,7 +1,7 @@
 export default function Layout({ children }) {
   return (
     <>
-    <main className="flex flex-row flex-wrap p-2 gap-16 justify-evenly mt-20 mx-10">
+    <main className="flex flex-row flex-wrap justify-evenly lg:px-24 my-24 mx-10">
    
         {children}
       </main>

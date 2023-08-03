@@ -18,14 +18,20 @@ async function Characters2() {
     <>
       {allChar?.map((ch) => (
         <div
-          className="flex flex-col text-center m-4 h-3 hover:scale-105 transition-transform"
-          style={{ alignItems: 'center' }}
+          className="
+          flex 
+          flex-col 
+          align-middle
+          text-center 
+          m-4
+          hover:scale-105 
+          transition-transform"
         >
           <Link href={`/characters/${ch._id}`}>
-            <h5>{ch.name}</h5>
+            <h5 className="text-sm">{ch.name}</h5>
             {/* ({ch.films.map((f, index)=><small>{f.title}{index !== ch.films.length - 1 ? ', ' : ''} </small>)}) */}
             <img
-              className='items-center h-52 w-auto'
+              className='items-center h-56 w-auto'
               // style={{ alignItems: 'center', height: '240px', width: 'auto' }}
               src={`https://starwars-visualguide.com/assets/img/characters/${ch._id}.jpg`}
               alt={`Character picture of '${ch.name}'.`}
