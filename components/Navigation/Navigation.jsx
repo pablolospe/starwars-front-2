@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import NextImage from 'next/image';
 
@@ -30,6 +30,19 @@ function Navigation() {
     setIsMenuOpen((prevState) => !prevState);
   };
 
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsMenuOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <header className="fixed top-0 left-0 w-full bg-black p-4 z-50 flex items-center justify-between">
       {/* Logo */}
@@ -46,25 +59,25 @@ function Navigation() {
         onClick={handleMenuToggle}
       >
         <div
-          className={`h-2 w-6 bg-yellow-400 transition ease-in-out duration-700 ${
-            isMenuOpen ? 'rotate-45 translate-y-1.5' : ''
+          className={`h-1 w-6 bg-amarillo transition ease-in-out duration-700 ${
+            isMenuOpen ? 'rotate-45 translate-y' : ''
           }`}
         ></div>
         <div
-          className={`h-2 w-6 bg-yellow-400 mt-1 mb-1 transition ease-in-out duration-700 ${
+          className={`h-1 w-6 bg-amarillo mt-1 mb-1 transition ease-in-out duration-700 ${
             isMenuOpen ? 'opacity-0' : ''
           }`}
         ></div>
         <div
-          className={`h-2 w-6 bg-yellow-400 transition ease-in-out duration-700 ${
-            isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
+          className={`h-1 w-6 bg-amarillo transition ease-in-out duration-700 ${
+            isMenuOpen ? '-rotate-45 -translate-y' : ''
           }`}
         ></div>
       </button>
 
       {/* Navegación */}
       <ul
-        className={`md:flex md:gap-4 ${
+        className={`md:flex md:gap-4 md:mx-5 ${
           isMenuOpen ? 'flex flex-col gap-4' : 'hidden'
         }`}
       >
@@ -72,7 +85,7 @@ function Navigation() {
           <li key={route}>
             <Link href={route}>
               <div
-                className="font-bold text-lg hover:shadow-yellow"
+                className="font-medium text-lg hover:shadow-amarillo"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {label}

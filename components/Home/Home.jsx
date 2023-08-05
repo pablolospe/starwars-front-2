@@ -6,10 +6,7 @@ function HomeComp() {
     <div className={styles.body}>
       <div className={styles.wrapper}>
         <div className={styles.scrollText}>
-          <br />
-          <br />
-          <br />
-          <br />
+       
           <h2 className={styles.h2}>STARWARS MICROSERVICES</h2>
           <br />
           <p>

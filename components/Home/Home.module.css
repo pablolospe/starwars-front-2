@@ -2,6 +2,7 @@
     background: rgb(20,20,20);
     overflow: hidden;
     /* margin: 50% 0 0 0; */
+    height: 100vh; /* Ajusta el alto al 100% del alto de la pantalla */
     position: relative;
 }
 
@@ -16,19 +17,19 @@
 .wrapper{
     display: flex;
     height: 100%;
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
-    perspective: 450px;
+    perspective: 150px;
 }
 
 .scrollText{
-    color: #ffc906;
+    color: #f3e21b;
     font-size: 3vw;
     line-height: 1.5em;
     font-weight: bold;
     text-align: justify;
     position: relative;
-    animation: scroll 120s linear forwards;
+    animation: scroll 220s linear forwards;
     /* transform: translateZ(-2500px) rotateX(20deg); */
 }
 
@@ -37,6 +38,6 @@
 }
 
 @keyframes scroll{
-    from { top:0; transform: translateZ(0) rotateX(20deg)}
+    from { top:100%; transform: translateZ(0) rotateX(20deg)}
     to {top: -7500px; transform: translateZ(-2500px) rotateX(21deg)}
 }
