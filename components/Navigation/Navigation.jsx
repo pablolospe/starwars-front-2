@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import NextImage from 'next/image';
-import styles from './Navigation.module.css'
 
 const links = [
   {
@@ -52,6 +51,13 @@ function Navigation() {
         alt="Star wars logo"
         width={120}
         height={60}
+        className={`transition-transform duration-700 ${
+          isMenuOpen ? 'translate-y-1' : ''
+        }`}
+        style={{
+          transformOrigin: 'center bottom', // Set transform origin to center bottom
+        }}
+
       />
 
       {/* Menú hamburguesa */}

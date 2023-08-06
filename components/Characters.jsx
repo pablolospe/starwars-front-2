@@ -3,9 +3,6 @@ import Link from 'next/link';
 
 const characters = async () => {
   return fetch('http://34.125.251.76:8000/characters', {
-    // next: {
-    //   revalidate: 60,
-    // },
   }).then((res) => res.json());
 };
 
