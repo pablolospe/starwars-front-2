@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import NextImage from 'next/image';
+import styles from './Navigation.module.css'
 
 const links = [
   {
