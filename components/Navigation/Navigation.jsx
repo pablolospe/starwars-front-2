@@ -58,7 +58,7 @@ function Navigation() {
           transformOrigin: 'center bottom', // Set transform origin to center bottom
         }}
       />
-      <h1 className='hidden sm:block fixed left-36 text-amarillo font-thin text-xl'>:: Microservices</h1>
+      <h1 className='hidden sm:block fixed left-36 text-amarillo font-light text-xl spac'>:: Microservices</h1>
       {/* Menú hamburguesa */}
       <button
         className="hamburger md:hidden focus:outline-none"
