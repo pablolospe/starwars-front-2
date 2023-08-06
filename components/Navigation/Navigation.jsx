@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -30,7 +30,6 @@ function Navigation() {
     setIsMenuOpen((prevState) => !prevState);
   };
 
-
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
@@ -46,6 +45,7 @@ function Navigation() {
   return (
     <header className="fixed top-0 left-0 w-full bg-black p-4 z-50 flex items-center justify-between">
       {/* Logo */}
+
       <NextImage
         src="/star-wars-logo.png"
         alt="Star wars logo"
@@ -57,9 +57,8 @@ function Navigation() {
         style={{
           transformOrigin: 'center bottom', // Set transform origin to center bottom
         }}
-
       />
-
+      <h1 className='hidden sm:block fixed left-36 text-amarillo font-thin text-xl'>:: Microservices</h1>
       {/* Menú hamburguesa */}
       <button
         className="hamburger md:hidden focus:outline-none"
@@ -107,12 +106,10 @@ function Navigation() {
 
 export default Navigation;
 
-
 // import React from 'react'
 // import Link from 'next/link';
 // // import styles from './Navigation.module.css'
 // import Image from 'next/image';
-
 
 // const links = [
 //     {
@@ -132,21 +129,21 @@ export default Navigation;
 //       route: '/about',
 //     },
 //   ];
-  
+
 //   function Navigation() {
 //     return (
 //       <div>
 //          <header className="
-//          w-full 
-//          px-10 
-//          py-20 
-//          flex 
-//          items-center 
-//          justify-between 
+//          w-full
+//          px-10
+//          py-20
+//          flex
+//          items-center
+//          justify-between
 //          md:justify-evenly md:red"
 
 //          >
-//             <Image 
+//             <Image
 //             src='/star-wars-fonts.png'
 //             alt={`Star wars logo`}
 //             width={120}
@@ -160,7 +157,7 @@ export default Navigation;
 //              {links.map(({ label, route })=>
 //              <li className=
 //              "py-2 px-4 font-semibold text-xl transition duration-300"
-//             //  {styles.word} 
+//             //  {styles.word}
 //              key={route}>
 //               <Link href={route}>{label}</Link>
 //              </li>
@@ -171,6 +168,5 @@ export default Navigation;
 //       </div>
 //     )
 //   }
-  
+
 //   export default Navigation
-  

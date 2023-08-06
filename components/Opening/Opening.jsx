@@ -38,7 +38,7 @@ function Opening({ opening_crawl }) {
   }, []);
 
   return (
-    <div className={styles.body}>
+    <div className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.scrollText} id="scrollText">
           <p>{opening_crawl}</p>
