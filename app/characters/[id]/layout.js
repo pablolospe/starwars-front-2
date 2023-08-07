@@ -21,13 +21,13 @@ async function Character({ params, children }) {
         alt={`Movie cover of '${thisChar?.data?.title}'.`}
       />
       <div >
-        <h2 className="text-xl">Films: </h2>
+        <h2 className="text-xl mb-2">Films: </h2>
         <ul>
           {thisChar?.data?.films.map((f, index) => (
             <Link href={`/films/${f._id}`}>
-              <li className='transition duration-500 hover:text-red-500'>
+              <li className='gap-2 transition duration-500 hover:text-red-500'>
                 {f.title}
-                {index !== thisChar.data.films.length - 1 ? ', ' : '.'}
+                {/* {index !== thisChar.data.films.length - 1 ? ', ' : '.'} */}
               </li>
             </Link>
           ))}
