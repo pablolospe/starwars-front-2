@@ -24,7 +24,7 @@ function HomeText() {
         and availability for users all around the world.
       </p>
       <br />
-      <h3 className="font-serif text-2xl md:text-4xl">Features:</h3>
+      <h3 className="font-serif text-xl md:text-xl">Features:</h3>
       <ul className="list-disc pl-6">
         <li>
           Explore detailed information about your favorite Star Wars characters

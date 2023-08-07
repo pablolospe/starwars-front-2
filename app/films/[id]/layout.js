@@ -13,6 +13,7 @@ async function Film({ params, children }) {
   const { id } = params;
   const thisFilm = await filmDetail(id);
   // console.log(thisFilm);
+
   return (
     <div className="flex flex-row flex-wrap justify-evenly lg:px-24 my-24 mx-3">
       <div className="flex flex-col text-center">
@@ -35,33 +36,34 @@ async function Film({ params, children }) {
           <Opening opening_crawl={thisFilm?.data?.opening_crawl} />
         </div>
       </div>
+      <div>
+        <h5 className="text-sm text-center m-3">Characters in this film</h5>
+        <div className="flex flex-wrap flex-row gap-4 justify-center">
+          {thisFilm?.data?.characters.map((ch, index) => (
+            <Link href={`/characters/${ch._id}`}>
+              <div
+                className="text-sm font-light flex flex-col items-center mx-14 md:mx-4 hover:scale-105 transition-transform "
+                key={ch._id}
+              >
+                {/* <div className="flex flex-column items-center"> */}
 
-      <h5 className="text-sm m-3">Characters in this film</h5>
-      <div className="flex flex-wrap flex-row gap-4 justify-center">
-        {thisFilm?.data?.characters.map((ch, index) => (
-          <Link href={`/characters/${ch._id}`}>
-            <div
-              className="text-sm font-light flex flex-col items-center mx-14 md:mx-4 hover:scale-105 transition-transform "
-              key={ch._id}
-            >
-              {/* <div className="flex flex-column items-center"> */}
-
-              <img
-                style={{
-                  height: '60px',
-                  width: '60px',
-                  objectFit: 'cover',
-                  borderRadius: '100%',
-                  border: 'solid #ffff0055 2px',
-                }}
-                src={`https://starwars-visualguide.com/assets/img/characters/${ch._id}.jpg`}
-                alt={`Movie cover of '${thisFilm?.data?.title}'.`}
-              />
-              <span>{ch.name}</span>
-              {/* </div> */}
-            </div>
-          </Link>
-        ))}
+                <img
+                  style={{
+                    height: '60px',
+                    width: '60px',
+                    objectFit: 'cover',
+                    borderRadius: '100%',
+                    border: 'solid #ffff0055 2px',
+                  }}
+                  src={`https://starwars-visualguide.com/assets/img/characters/${ch._id}.jpg`}
+                  alt={`Movie cover of '${thisFilm?.data?.title}'.`}
+                />
+                <span>{ch.name}</span>
+                {/* </div> */}
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
       {/* {children} */}
     </div>
