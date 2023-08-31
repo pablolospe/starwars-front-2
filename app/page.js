@@ -1,13 +1,14 @@
 import HomeComp from '@/components/Home/Home';
 import Link from 'next/link';
+import { BsInfoCircle } from 'react-icons/bs';
 
 export default function Home() {
   return (
     <>
       <HomeComp />
       <Link href="/static">
-        <button className="absolute top-32 right-4 md:right-8 border h-6 w-6 rounded-full text-xs bg-gray-900 hover:bg-gray-950">
-          i
+        <button className="fixed top-28 right-4 md:right-8 h-8 w-8 hover:scale-105 transition-transform">
+          <BsInfoCircle className="h-full w-full" />
         </button>
       </Link>
     </>
