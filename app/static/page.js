@@ -5,7 +5,7 @@ import { BsArrowLeftCircle } from 'react-icons/bs';
 
 function Static() {
   return (
-    <div className="my-40 mx-12 md:w-[60%] mx-auto font-medium">
+    <div className="my-40 mx-12 md:w-[60%] md:mx-auto font-medium">
       <HomeText />
       <Link href="/">
         <button className="fixed top-28 right-4 md:right-8 h-8 w-8 hover:scale-105 transition-transform">
