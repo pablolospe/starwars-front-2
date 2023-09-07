@@ -9,12 +9,13 @@
     height: 360px; 
     /* position: relative; */
 }
-/* 
-.container::after{
+
+/* .container::after{
     content: '';
     overflow: hidden;
     position: absolute;
     top: 200px;
+    
     width: 170%;
     height: 16%;
     background: linear-gradient(180deg, rgb(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 100% );
