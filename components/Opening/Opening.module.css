@@ -1,13 +1,15 @@
 .container{
-    background: black;
-    /* background: rgb(20,20,20); */
+    /* background: black; */
+    background-image: url('https://fondosmil.com/fondo/10829.jpg');
+    background-size: cover;
     overflow: hidden;
+    border-radius: 1rem;
     /* margin: 50% 0 0 0; */
     padding-inline: 50px;
     height: 360px; 
     /* position: relative; */
 }
-
+/* 
 .container::after{
     content: '';
     overflow: hidden;
@@ -16,7 +18,7 @@
     width: 170%;
     height: 16%;
     background: linear-gradient(180deg, rgb(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 100% );
-}
+} */
 
 .wrapper{
     display: flex;

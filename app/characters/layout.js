@@ -9,7 +9,7 @@ function Characters({ children }) {
       flex-wrap 
       p-2 
       justify-evenly 
-      mt-24 
+      mt-20
       mx-12
       ">
         {children}

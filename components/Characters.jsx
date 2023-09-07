@@ -6,10 +6,10 @@ const characters = async () => {
   }).then((res) => res.json());
 };
 
-async function Characters2() {
+async function Characters() {
   const data = await characters();
   const allChar = data.data;
-  console.log(data.data);
+  // console.log(data.data);
 
   return (
     <>
@@ -40,4 +40,4 @@ async function Characters2() {
   );
 }
 
-export default Characters2;
+export default Characters;

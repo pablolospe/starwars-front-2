@@ -4,7 +4,7 @@ import styles from './Home.module.css';
 function HomeText() {
   return (
     <>
-      <h2 className={styles.h2}>STARWARS MICROSERVICES</h2>
+      <h2 className='md:text-4xl text-amarillo'>STARWARS MICROSERVICES</h2>
       <br />
       <p>
         StarWars MicroServices is a web application that provides comprehensive
@@ -24,7 +24,9 @@ function HomeText() {
         and availability for users all around the world.
       </p>
       <br />
-      <h3 className="font-serif text-xl md:text-xl">Features:</h3>
+      
+      <h3 className="font-serif text-xl md:text-2xl">Features:</h3>
+
       <ul className="list-disc pl-6">
         <li>
           Explore detailed information about your favorite Star Wars characters
