@@ -5,7 +5,7 @@ import { BsArrowLeftCircle } from 'react-icons/bs';
 
 function Static() {
   return (
-    <div className="mt-20 mx-12 md:w-[60%] md:mx-auto font-medium bg-cover" style={{backgroundImage: 'url("https://fondosmil.com/fondo/10829.jpg")'}}>
+    <div className="mt-20 md:mx-12 md:w-[60%] font-medium bg-cover" style={{backgroundImage: 'url("https://fondosmil.com/fondo/10829.jpg")'}}>
       <HomeText />
       <Link href="/">
         <button className="fixed top-20 right-4 md:right-8 h-8 w-8 hover:scale-105 transition-transform">

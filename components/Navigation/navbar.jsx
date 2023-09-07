@@ -45,8 +45,6 @@ function Navigation() {
   return (
     <>
       {/* Línea antes de la barra de navegación */}
-      {/* <div className="w-full bg-rojo h-1 absolute top-[85px] hidden md:block bg-opacity-70"></div> */}
-
       <div
         className={`fixed top-0 z-50 flex items-center justify-between w-full bg-black  ${
           isMenuOpen
@@ -80,7 +78,7 @@ function Navigation() {
             <li key={route}>
               <Link href={route}>
                 <div
-                  className="text-amarillo text-center font-serif text-md hover:text-yellow-100"
+                  className="text-amarillo text-center font-light hover:text-yellow-100"
                   style={{
                     textShadow: '0 0 10px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.4)',
                   }}

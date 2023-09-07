@@ -4,9 +4,9 @@ import Loading from '../loading';
 
 function CharPage() {
   return (
-    <>
+    <div>
       <Characters />
-    </>
+    </div>
   );
 }
 

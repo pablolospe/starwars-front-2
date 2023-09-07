@@ -14,25 +14,17 @@ async function Films() {
   return (
     <>
       {filme?.map((f) => (
-        <div className="flex  mt-4
-        mb-6" key={f._id}>
+        
+        <div className="flex mb-6" key={f._id}>
           <Link href={`/films/${f._id}`}>
             <div 
-            className="
-            flex 
-            flex-col 
-            align-middle
-            text-center 
-            m-2
-            hover:scale-105 
-            transition-transform
-            ">
+            className="flex flex-col align-middletext-center m-2 transition-transform" 
+            >
               <h5>{f.title}</h5>
             </div>
 
             <img
-            className="flex h-80 w-auto mx-5 hover:scale-105 transition-transform"
-              // style={{ height:'320px', width:'auto', margin:'0 20px'}}
+              className="flex h-80 w-auto mx-5 hover:scale-105 transition-transform ease-in-out"
               src={`https://starwars-visualguide.com/assets/img/films/${f._id}.jpg`}
               alt={`Movie cover of '${f.title}'.`}
             />
