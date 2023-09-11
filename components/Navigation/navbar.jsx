@@ -92,6 +92,8 @@ function Navigation() {
           ))}
         </ul>
 
+        <h1 className='hidden sm:block fixed left-32 text-amarillo font-light text-xl '>:: Microservices</h1>
+
         <button
           className="hamburger md:invisible focus:outline-none mr-10"
           onClick={handleMenuToggle}

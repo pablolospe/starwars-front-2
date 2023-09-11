@@ -18,7 +18,7 @@ async function Films() {
         <div className="flex mb-6" key={f._id}>
           <Link href={`/films/${f._id}`}>
             <div 
-            className="flex flex-col align-middletext-center m-2 transition-transform" 
+            className="flex flex-col align-middle text-center m-2 transition-transform" 
             >
               <h5>{f.title}</h5>
             </div>
