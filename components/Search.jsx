@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { BsSearch, BsXLg } from 'react-icons/bs';
+import { BsXLg } from 'react-icons/bs';
 
 function Search(props) {
   let allChar = props.allChar;
@@ -17,9 +17,9 @@ function Search(props) {
           placeholder="Search character..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="p-2 mr-1 h-9 rounded-sm"
+          className="p-2 mr-1 h-9 rounded-sm bg-yellow-200"
         />
-        <button onClick={()=>setSearchTerm('')} className='bg-white h-9 p-2 rounded-sm'><BsXLg/></button>
+        <button onClick={()=>setSearchTerm('')} className='bg-yellow-300 hover:bg-yellow-400 h-9 p-2 rounded-sm'><BsXLg/></button>
       </div>
 
       <div

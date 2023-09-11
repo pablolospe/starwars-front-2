@@ -32,6 +32,10 @@ async function Character({ params, children }) {
         </div>
 
         <div className="md:mt-36 mb-4">
+          <h2 className="text-xl mb-2">Planet:</h2> <span> {thisChar?.data?.homeworld?.name}</span>
+          <br/>
+          <br/>
+          <br/>
           <h2 className="text-xl mb-2">Films: </h2>
           <ul>
             {thisChar?.data?.films.map((f, index) => (
@@ -43,6 +47,7 @@ async function Character({ params, children }) {
             ))}
           </ul>
         </div>
+        
       </div>
     </div>
   );
