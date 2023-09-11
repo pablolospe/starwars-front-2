@@ -1,13 +1,20 @@
 import React from 'react'
 
-function StatucLayout({children}) {
+function StaticLayout({children}) {
   return (
     <>
-    <div className="max-h-screen p-6 bg-cover" style={{backgroundImage: 'url("https://fondosmil.com/fondo/10829.jpg")'}}>
+   <div
+      className="h-screen bg-cover"
+      style={{
+        backgroundImage: 'url("https://fondosmil.com/fondo/10829.jpg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >    
     {children}
     </div>
     </>
   )
 }
 
-export default StatucLayout
+export default StaticLayout
