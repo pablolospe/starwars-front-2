@@ -31,11 +31,11 @@ async function Character({ params, children }) {
           />
         </div>
 
-        <div className='md:mt-36 mb-4'>
+        <div className="md:mt-36 mb-4">
           <h2 className="text-xl mb-2">Films: </h2>
           <ul>
             {thisChar?.data?.films.map((f, index) => (
-              <Link href={`/films/${f._id}`}>
+              <Link key={index} href={`/films/${f._id}`}>
                 <li className="gap-2 transition duration-500 hover:text-red-500">
                   {f.title}
                 </li>

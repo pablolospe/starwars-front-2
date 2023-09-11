@@ -2,7 +2,7 @@ import React from 'react';
 
 function AboutPage() {
   return (
-    <div className="flex min-h-screen text-lg font-medium flex-col justify-evenly items-left p-12">
+    <div className="flex min-h-screen text-lg font-medium flex-col justify-evenly items-left p-8">
       <div className="mt-20 text-center">
         <h2 className='text-lg font-light'>Created by Pablo Xavier Lospennato</h2>
         <h3>Full Stack Developer</h3>

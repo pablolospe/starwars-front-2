@@ -39,6 +39,7 @@ function Search(props) {
               m-4
               hover:scale-105 
               transition-transform"
+              key={ch._id}
             >
               <Link href={`/characters/${ch._id}`}>
                 <h5 className="text-amarillo">{ch.name}</h5>
