@@ -17,7 +17,7 @@ async function Film({ params }) {
 
   return (
     <div className="flex flex-row flex-wrap justify-evenly lg:px-24 lg:mx-24 my-24 mx-3">
-       <Link href="/films">
+      <Link href="/films">
         <button className="fixed top-20 right-4 md:right-8 h-8 w-8 hover:scale-105 transition-transform">
           <BsArrowLeftCircle className="h-full w-full" />
         </button>
@@ -52,8 +52,6 @@ async function Film({ params }) {
                 className="text-sm font-light flex flex-col items-center mx-14 md:mx-4 hover:scale-105 transition-transform "
                 key={ch._id}
               >
-                {/* <div className="flex flex-column items-center"> */}
-
                 <img
                   style={{
                     height: '60px',
@@ -66,7 +64,6 @@ async function Film({ params }) {
                   alt={`Movie cover of '${thisFilm?.data?.title}'.`}
                 />
                 <span>{ch.name}</span>
-                {/* </div> */}
               </div>
             </Link>
           ))}
