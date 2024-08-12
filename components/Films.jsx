@@ -1,15 +1,17 @@
 import Link from 'next/link';
-import React from 'react';
 import { formatDate } from '../utils';
 import { URL } from '@/config';
 
+
 const films = async () => {
-  return fetch(`${URL}/films`).then((res) => res.json());
+  return fetch(`${URL}/api/films`, {
+  }).then((res) => res.json());
 };
 
 async function Films() {
   const data = await films();
-  const allFilms = data.data;
+  console.log(data);
+  const allFilms = data;
   const filme = allFilms.filter((f) => Number(f.id) < 7);
 
   return (

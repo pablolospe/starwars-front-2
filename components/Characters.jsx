@@ -10,7 +10,7 @@ const characters = async () => {
 
 async function Characters() {
   const data = await characters();
-  console.log(data);
+  // console.log(data);
   const allChar = data;
 
   return (
