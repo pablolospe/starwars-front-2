@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { formatDate } from '../utils';
+import { URL } from '@/config';
 
 const films = async () => {
   return fetch(`${URL}/films`).then((res) => res.json());
