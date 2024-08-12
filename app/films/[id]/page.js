@@ -4,20 +4,15 @@ import Link from 'next/link';
 import Opening from '@/components/Opening/Opening';
 import { BsArrowLeftCircle } from 'react-icons/bs';
 import { URL } from '@/config';
-
-const getFilms = async () => {
-  return fetch(`${URL}/api/films`).then((res) =>
-    res.json()
-  );
-};
+import { getCharacters, getFilms } from '@/utils/fetch';
 
 async function Film({ params }) {
   const { id } = params;
   const allFilms = await getFilms();
-  // console.log(allFilms);
   const thisFilm= allFilms.find(f => f.id === id)
-  // console.log(thisFilm);
-  // const thisFilm = await filmDetail(id);
+  
+  const allChar = await getCharacters();
+  const thisChar= allChar.filter(ch => ch.id === id)
 
   return (
     <div className="flex flex-row flex-wrap justify-evenly lg:px-24 lg:mx-24 my-24 mx-3">
@@ -50,7 +45,8 @@ async function Film({ params }) {
       <div>
         <h5 className="text-sm text-center m-3">Characters in this film</h5>
         <div className="flex flex-wrap flex-row gap-4 justify-center">
-          {thisFilm?.characters.map((ch, index) => (
+          {allChar.map((ch, index) => (
+          // {thisFilm?.characters.map((ch, index) => (
             <Link href={`/characters/${ch.id}`}>
               <div
                 className="text-sm font-light flex flex-col items-center mx-14 md:mx-4 hover:scale-105 transition-transform "
