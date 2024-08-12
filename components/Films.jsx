@@ -10,7 +10,7 @@ const films = async () => {
 
 async function Films() {
   const data = await films();
-  console.log(data);
+  // console.log(data);
   const allFilms = data;
   const filme = allFilms.filter((f) => Number(f.id) < 7);
 
