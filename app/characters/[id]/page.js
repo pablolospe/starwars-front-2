@@ -2,9 +2,10 @@ import React from 'react';
 import { formatDate } from '@/utils';
 import Link from 'next/link';
 import { BsArrowLeftCircle } from 'react-icons/bs';
+import { URL } from '@/config';
 
 const CharacterDetail = async (id) => {
-  return fetch(`http://34.125.251.76:8000/characters/${id}`).then((res) =>
+  return fetch(`${URL}/characters/${id}`).then((res) =>
     res.json()
   );
 };

@@ -39,14 +39,14 @@ function Search(props) {
               m-4
               hover:scale-105 
               transition-transform"
-              key={ch._id}
+              key={ch.id}
             >
-              <Link href={`/characters/${ch._id}`}>
+              <Link href={`/characters/${ch.id}`}>
                 <h5 className="text-amarillo">{ch.name}</h5>
                 
                 <img
                   className="items-center h-56 w-auto"
-                  src={`https://starwars-visualguide.com/assets/img/characters/${ch._id}.jpg`}
+                  src={`https://starwars-visualguide.com/assets/img/characters/${ch.id}.jpg`}
                   alt={`Character picture of '${ch.name}'.`}
                 />
               </Link>

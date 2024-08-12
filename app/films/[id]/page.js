@@ -3,9 +3,10 @@ import { formatDate } from '@/utils';
 import Link from 'next/link';
 import Opening from '@/components/Opening/Opening';
 import { BsArrowLeftCircle } from 'react-icons/bs';
+import { URL } from '@/config';
 
 const filmDetail = async (id) => {
-  return fetch(`http://34.125.251.76:8000/films/${id}`).then((res) =>
+  return fetch(`${URL}/films/${id}`).then((res) =>
     res.json()
   );
 };
@@ -34,7 +35,7 @@ async function Film({ params }) {
         <div className="min-w-fit">
           <img
             style={{ alignItems: 'center', height: '360px', width: 'auto' }}
-            src={`https://starwars-visualguide.com/assets/img/films/${thisFilm?.data?._id}.jpg`}
+            src={`https://starwars-visualguide.com/assets/img/films/${thisFilm?.data?.id}.jpg`}
             alt={`Movie cover of '${thisFilm?.data?.title}'.`}
           />
         </div>
@@ -47,10 +48,10 @@ async function Film({ params }) {
         <h5 className="text-sm text-center m-3">Characters in this film</h5>
         <div className="flex flex-wrap flex-row gap-4 justify-center">
           {thisFilm?.data?.characters.map((ch, index) => (
-            <Link href={`/characters/${ch._id}`}>
+            <Link href={`/characters/${ch.id}`}>
               <div
                 className="text-sm font-light flex flex-col items-center mx-14 md:mx-4 hover:scale-105 transition-transform "
-                key={ch._id}
+                key={ch.id}
               >
                 <img
                   style={{
@@ -60,7 +61,7 @@ async function Film({ params }) {
                     borderRadius: '100%',
                     border: 'solid #ffff0055 2px',
                   }}
-                  src={`https://starwars-visualguide.com/assets/img/characters/${ch._id}.jpg`}
+                  src={`https://starwars-visualguide.com/assets/img/characters/${ch.id}.jpg`}
                   alt={`Movie cover of '${thisFilm?.data?.title}'.`}
                 />
                 <span>{ch.name}</span>
@@ -69,7 +70,6 @@ async function Film({ params }) {
           ))}
         </div>
       </div>
-      {/* {children} */}
     </div>
   );
 }

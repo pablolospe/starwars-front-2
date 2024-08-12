@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './Home.module.css';
 
 function HomeText() {
   return (
@@ -32,7 +31,7 @@ function HomeText() {
           Explore detailed information about your favorite Star Wars characters
           and films.
         </li>
-        {/* <li>Create, update, and delete records to contribute to the Star Wars database.</li> */}
+
         <li>
           Search for specific characters, films, or planets to quickly find the
           information you're looking for.

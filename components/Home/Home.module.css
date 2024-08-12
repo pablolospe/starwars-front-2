@@ -3,7 +3,6 @@
     background-image: url('https://fondosmil.com/fondo/10829.jpg');
     background-size: cover;
     overflow: hidden;
-    /* margin: 50% 0 0 0; */
     height: 100vh; /* Ajusta el alto al 100% del alto de la pantalla */
     position: relative;
 }
