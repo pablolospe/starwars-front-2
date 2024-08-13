@@ -41,3 +41,26 @@ export const getCharacters = async () => {
   }
 };
 
+export const getPlanets = async () => {
+  try {
+    const response = await fetch(`${URL}/api/planets`, { cache: 'no-store' });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const contentType = response.headers.get('content-type');
+    if (!contentType || !contentType.includes('application/json')) {
+      const text = await response.text();
+      console.error('Received non-JSON response:', text);
+      throw new Error('Expected JSON, but received non-JSON response');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching planets:', error);
+    throw error;
+  }
+};
+

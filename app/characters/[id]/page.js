@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { BsArrowLeftCircle } from 'react-icons/bs';
-import { getCharacters, getFilms } from '@/utils/fetch';
+import { getCharacters, getFilms, getPlanets } from '@/utils/fetch';
 
 async function Character({ params, children }) {
   const { id } = params;
@@ -8,6 +8,13 @@ async function Character({ params, children }) {
   const thisChar= allChar.find(f => f.id === id)
 
   const allFilms = await getFilms();
+  const theseFilms = thisChar.films.map(f => parseInt(f))
+  const result = allFilms.filter(f => theseFilms.includes(parseInt(f.id)));
+
+  const allPlanets = await getPlanets();
+  const thisPlanet = parseInt(thisChar.homeworld)
+  const planetName = allPlanets.find(p => thisPlanet == parseInt(p.id));
+
 
   return (
     <div className="mt-36 md:mt-20 flex justify-center items-center max-h-screen">
@@ -28,13 +35,13 @@ async function Character({ params, children }) {
         </div>
 
         <div className="md:mt-36 mb-4">
-          <h2 className="text-xl mb-2">Planet:</h2> <span> {thisChar?.homeworld?.name}</span>
+          <h2 className="text-xl mb-2">Planet:</h2> <span> {planetName.name}</span>
           <br/>
           <br/>
           <br/>
           <h2 className="text-xl mb-2">Films: </h2>
           <ul>
-            {thisChar?.films.map((f, index) => (
+            {result.map((f, index) => (
               <Link key={index} href={`/films/${f.id}`}>
                 <li className="gap-2 transition duration-500 hover:text-red-500">
                   {f.title}
