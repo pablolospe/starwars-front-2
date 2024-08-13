@@ -2,7 +2,7 @@ import { URL } from '@/config';
 
 export const getFilms = async () => {
   try {
-    const response = await fetch(`${URL}/api/films`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/films`);
     
     // Verifica si la respuesta es exitosa
     if (!response.ok) {
@@ -20,7 +20,7 @@ export const getFilms = async () => {
 
 export const getCharacters = async () => {
   try {
-    const response = await fetch(`${URL}/api/characters`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/characters`);
     
     // Verifica si la respuesta es exitosa
     if (!response.ok) {
