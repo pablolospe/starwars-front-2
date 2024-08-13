@@ -1,18 +1,12 @@
-import React from 'react';
-import { formatDate } from '@/utils';
 import Link from 'next/link';
 import { BsArrowLeftCircle } from 'react-icons/bs';
-import { URL } from '@/config';
-
-const CharacterDetail = async (id) => {
-  return fetch(`${URL}/characters/${id}`).then((res) =>
-    res.json()
-  );
-};
+import { getCharacters, getFilms } from '@/utils/fetch';
 
 async function Character({ params, children }) {
   const { id } = params;
-  const thisChar = await CharacterDetail(id);
+  const allChar = await getCharacters();
+  const thisChar= allChar.find(f => f.id === id)
+
 
   return (
     <div className="mt-36 md:mt-20 flex justify-center items-center max-h-screen">
@@ -24,23 +18,23 @@ async function Character({ params, children }) {
 
       <div className="flex flex-col md:flex-row gap-10 self-center ">
         <div>
-          <h1 className="text-3xl text-center m-2">{thisChar?.data?.name}</h1>
+          <h1 className="text-3xl text-center m-2">{thisChar?.name}</h1>
           <img
             style={{ alignItems: 'center', maxHeight: '480px', width: 'auto' }}
-            src={`https://starwars-visualguide.com/assets/img/characters/${thisChar?.data?._id}.jpg`}
-            alt={`Movie cover of '${thisChar?.data?.title}'.`}
+            src={`https://starwars-visualguide.com/assets/img/characters/${thisChar?.id}.jpg`}
+            alt={`Movie cover of '${thisChar?.title}'.`}
           />
         </div>
 
         <div className="md:mt-36 mb-4">
-          <h2 className="text-xl mb-2">Planet:</h2> <span> {thisChar?.data?.homeworld?.name}</span>
+          <h2 className="text-xl mb-2">Planet:</h2> <span> {thisChar?.homeworld?.name}</span>
           <br/>
           <br/>
           <br/>
           <h2 className="text-xl mb-2">Films: </h2>
           <ul>
-            {thisChar?.data?.films.map((f, index) => (
-              <Link key={index} href={`/films/${f._id}`}>
+            {thisChar?.films.map((f, index) => (
+              <Link key={index} href={`/films/${f.id}`}>
                 <li className="gap-2 transition duration-500 hover:text-red-500">
                   {f.title}
                 </li>
