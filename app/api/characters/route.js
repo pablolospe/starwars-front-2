@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 export function getCharacters() {
-  const filePath = path.join(process.cwd(), 'data', 'planets.json');
+  const filePath = path.join(process.cwd(), 'data', 'characters.json');
   const jsonData = fs.readFileSync(filePath, 'utf-8');
   return JSON.parse(jsonData);
 }

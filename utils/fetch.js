@@ -2,7 +2,7 @@ import { URL } from '@/config';
 
 export const getFilms = async () => {
   try {
-    const response = await fetch(`${URL}/api/films`);
+    const response = await fetch(`${URL}/api/films`, { cache: 'no-store' });
     
     // Verifica si la respuesta es exitosa
     if (!response.ok) {
@@ -20,7 +20,7 @@ export const getFilms = async () => {
 
 export const getCharacters = async () => {
   try {
-    const response = await fetch(`${URL}/api/characters`);
+    const response = await fetch(`${URL}/api/characters`, { cache: 'no-store' });
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);

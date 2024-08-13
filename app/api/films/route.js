@@ -1,16 +1,16 @@
 import fs from 'fs';
 import path from 'path';
 
-export function getPlanets() {
-  const filePath = path.join(process.cwd(), 'data', 'planets.json');
+export function getFilms() {
+  const filePath = path.join(process.cwd(), 'data', 'films.json');
   const jsonData = fs.readFileSync(filePath, 'utf-8');
   return JSON.parse(jsonData);
 }
 
-const planets = getPlanets();
+const films = getFilms();
 
 export function GET(request) {
-  return new Response(JSON.stringify(planets), {
+  return new Response(JSON.stringify(films), {
     status: 200,
     headers: {
       'Content-Type': 'application/json'
