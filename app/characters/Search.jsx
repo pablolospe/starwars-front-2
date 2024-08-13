@@ -3,6 +3,11 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { BsXLg } from 'react-icons/bs';
+import Image from 'next/image';
+
+const myLoader = ({ src }) => {
+  return `https://starwars-visualguide.com/assets/img/characters/${src}`;
+};
 
 function Search(props) {
   let allChar = props.allChar;
@@ -20,7 +25,7 @@ function Search(props) {
           onChange={(e) => setSearchTerm(e.target.value)}
           className="p-2 mr-1 h-9 rounded-sm bg-yellow-200"
         />
-        <button onClick={()=>setSearchTerm('')} className='bg-yellow-300 hover:bg-yellow-400 h-9 p-2 rounded-sm'><BsXLg/></button>
+        <button onClick={() => setSearchTerm('')} className='bg-yellow-300 hover:bg-yellow-400 h-9 p-2 rounded-sm'><BsXLg /></button>
       </div>
 
       <div
@@ -44,11 +49,15 @@ function Search(props) {
             >
               <Link href={`/characters/${ch.id}`}>
                 <h5 className="text-amarillo">{ch.name}</h5>
-                
-                <img
+
+                <Image
                   className="items-center h-56 w-auto"
-                  src={`https://starwars-visualguide.com/assets/img/characters/${ch.id}.jpg`}
+                  // src={`https://starwars-visualguide.com/assets/img/characters/${ch.id}.jpg`}
+                  src={`${ch.id}.jpg`}
                   alt={`Character picture of '${ch.name}'.`}
+                  width={50}
+                  height={100}
+                  loader={myLoader}   // Usa el loader para URLs externas
                 />
               </Link>
             </div>
