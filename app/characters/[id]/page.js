@@ -17,7 +17,7 @@ async function Character({ params, children }) {
 
 
   return (
-    <div className="mt-36 md:mt-20 flex justify-center items-center max-h-screen">
+    <div className="mt-48 md:mt-20 flex justify-center items-center max-h-screen">
       <Link href="/characters">
         <button className="fixed top-20 right-4 md:right-8 h-8 w-8 hover:scale-105 transition-transform">
           <BsArrowLeftCircle className="h-full w-full" />
@@ -35,15 +35,15 @@ async function Character({ params, children }) {
         </div>
 
         <div className="md:mt-36 mb-4">
-          <h2 className="text-xl mb-2">Planet:</h2> <span> {planetName.name}</span>
+          <h2 className="text-xl mb-2">Planet:</h2> 
+          <p className='ml-3'> {planetName.name}</p>
           <br/>
-          <br/>
-          <br/>
+          
           <h2 className="text-xl mb-2">Films: </h2>
           <ul>
             {result.map((f, index) => (
               <Link key={index} href={`/films/${f.id}`}>
-                <li className="gap-2 transition duration-500 hover:text-red-500">
+                <li className="gap-2 transition duration-500 hover:text-red-500 ml-3">
                   {f.title}
                 </li>
               </Link>
