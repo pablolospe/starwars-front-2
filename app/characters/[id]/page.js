@@ -7,6 +7,7 @@ async function Character({ params, children }) {
   const allChar = await getCharacters();
   const thisChar= allChar.find(f => f.id === id)
 
+  const allFilms = await getFilms();
 
   return (
     <div className="mt-36 md:mt-20 flex justify-center items-center max-h-screen">
