@@ -1,5 +1,4 @@
 import Films from '@/app/films/Films';
-import React from 'react';
 
 function page() {
   return (

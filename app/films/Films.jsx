@@ -1,14 +1,10 @@
 import { URL } from '@/config';
+import { getFilms } from '@/utils/fetch';
 import Link from 'next/link';
 
-const films = async () => {
-  return fetch(`${URL}/api/films`, {
-  }).then((res) => res.json());
-};
-
 async function Films() {
-  const data = await films();
-  // console.log(data);
+  const data = await getFilms();
+  
   const allFilms = data;
   const filme = allFilms.filter((f) => Number(f.id) < 7);
 

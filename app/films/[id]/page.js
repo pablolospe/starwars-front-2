@@ -8,6 +8,7 @@ async function Film({ params }) {
   const { id } = params;
   const allFilms = await getFilms();
   const thisFilm= allFilms.find(f => f.id === id)
+  
   const theseChar = thisFilm.characters.map(ch => parseInt(ch))
   const allChar = await getCharacters();
   const result = allChar.filter(char => theseChar.includes(parseInt(char.id)));

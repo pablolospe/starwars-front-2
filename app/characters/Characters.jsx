@@ -1,21 +1,14 @@
 import { URL } from '@/config';
 import Search from './Search';
-
-const characters = async () => {
-  return fetch(`${URL}/api/characters`, {
-  }).then((res) => res.json());
-};
+import { getCharacters } from '@/utils/fetch';
 
 async function Characters() {
-  const data = await characters();
-  // console.log(data);
+  const data = await getCharacters();
   const allChar = data;
 
   return (
     <div >
-   
       <Search allChar={allChar} />
-
     </div>
   );
 }
