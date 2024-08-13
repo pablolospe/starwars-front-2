@@ -6,8 +6,14 @@ export function getPlanets() {
   const jsonData = fs.readFileSync(filePath, 'utf-8');
   return JSON.parse(jsonData);
 }
-const planets = getPlanets()
 
-export default function handler(req, res) {
-  res.status(200).json(planets)
+const planets = getPlanets();
+
+export function GET(request) {
+  return new Response(JSON.stringify(planets), {
+    status: 200,
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
 }
