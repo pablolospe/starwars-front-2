@@ -8,9 +8,9 @@ async function Film({ params }) {
   const { id } = params;
   const allFilms = await getFilms();
   const thisFilm= allFilms.find(f => f.id === id)
-  
+  const theseChar = thisFilm.characters.map(ch => parseInt(ch))
   const allChar = await getCharacters();
-  const thisChar= allChar.filter(ch => ch.id === id)
+  const result = allChar.filter(char => theseChar.includes(parseInt(char.id)));
 
   return (
     <div className="flex flex-row flex-wrap justify-evenly lg:px-24 lg:mx-24 my-24 mx-3">
@@ -43,9 +43,9 @@ async function Film({ params }) {
       <div>
         <h5 className="text-sm text-center m-3">Characters in this film</h5>
         <div className="flex flex-wrap flex-row gap-4 justify-center">
-          {allChar.map((ch, index) => (
-          // {thisFilm?.characters.map((ch, index) => (
-            <Link href={`/characters/${ch.id}`}>
+          {}
+          {result.map((ch, index) => (
+            <Link href={`/characters/${ch.id}`} key={ch.id} >
               <div
                 className="text-sm font-light flex flex-col items-center mx-14 md:mx-4 hover:scale-105 transition-transform "
                 key={ch.id}
