@@ -3,7 +3,7 @@ import Characters from '@/app/characters/Characters';
 function CharPage() {
   return (
     <div>
-      <Characters />
+      {/* <Characters /> */}
     </div>
   );
 }
