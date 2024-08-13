@@ -1,9 +1,7 @@
-import React from 'react';
 import { formatDate } from '@/utils';
 import Link from 'next/link';
 import Opening from '@/components/Opening/Opening';
 import { BsArrowLeftCircle } from 'react-icons/bs';
-import { URL } from '@/config';
 import { getCharacters, getFilms } from '@/utils/fetch';
 
 async function Film({ params }) {

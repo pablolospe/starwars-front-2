@@ -1,10 +1,7 @@
-
-import Link from 'next/link';
 import Search from './Search';
-import { URL } from '@/config';
 
 const characters = async () => {
-  return fetch(`${URL}/api/characters`, {
+  return fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/characters`, {
   }).then((res) => res.json());
 };
 
