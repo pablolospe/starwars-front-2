@@ -1,7 +1,8 @@
+import { URL } from '@/config';
 import Link from 'next/link';
 
 const films = async () => {
-  return fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/films`, {
+  return fetch(`${URL}/api/films`, {
   }).then((res) => res.json());
 };
 
