@@ -1,4 +1,4 @@
-import Films from '@/components/Films';
+import Films from '@/app/films/Films';
 import React from 'react';
 
 function page() {

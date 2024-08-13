@@ -1,4 +1,4 @@
-import Characters from '@/components/Characters';
+import Characters from '@/app/characters/Characters';
 
 function CharPage() {
   return (
