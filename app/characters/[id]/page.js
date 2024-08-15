@@ -19,7 +19,7 @@ async function Character({ params, children }) {
   const planetName = allPlanets.find(p => thisPlanet == parseInt(p.id));
 
   return (
-    <div className="mt-48 md:mt-20 flex justify-center items-center max-h-screen">
+    <div className="mt-36 md:mt-20 flex justify-center items-center max-h-screen">
       <Link href="/characters">
         <button className="fixed top-20 right-4 md:right-8 h-8 w-8 hover:scale-105 transition-transform">
           <BsArrowLeftCircle className="h-full w-full" />
