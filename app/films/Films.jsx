@@ -10,7 +10,7 @@ async function Films() {
   const filme = allFilms.filter((f) => Number(f.id) < 7);
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 justify-items-center my-32 mx-4 md:mx-40 gap-8">
+    <div className="grid grid-cols-2 sm:grid-cols-3 justify-items-center my-32 mx-4 md:mx-10 lg:mx-40 gap-8">
       {filme?.map((f) => (
 
         <div className="flex mb-6" key={f.id}>

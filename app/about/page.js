@@ -5,7 +5,7 @@ function AboutPage() {
     <div className="flex min-h-screen text-lg font-medium flex-col justify-evenly items-left p-8">
       <div className="mt-20 text-center">
         <h2 className='text-lg font-light'>Created by </h2>
-        <a className='text-xl font-light' href="https://pablolospe.github.io/pol-folio/" target="_blank">
+        <a className='text-xl font-light transition duration-500 hover:text-red-500 ' href="https://pablolospe.github.io/pol-folio/" target="_blank">
           Pablo X. Lospennato
         </a>
         <p className='text-md font-light'>Full Stack Developer</p>
