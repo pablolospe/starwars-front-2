@@ -14,9 +14,9 @@ async function Film({ params }) {
   const result = allChar.filter(char => theseChar.includes(parseInt(char.id)));
 
   return (
-    <div className="flex flex-row flex-wrap justify-evenly lg:px-24 lg:mx-24 my-24 mx-3">
+    <div className="flex flex-row flex-wrap justify-evenly my-24 mx-4 md:mx-40">
       <Link href="/films">
-        <button className="fixed top-20 right-4 md:right-8 h-8 w-8 hover:scale-105 transition-transform">
+        <button className="fixed top-20 right-4 md:right-20 h-8 w-8 hover:scale-105 transition-transform">
           <BsArrowLeftCircle className="h-full w-full" />
         </button>
       </Link>
@@ -41,6 +41,7 @@ async function Film({ params }) {
           <Opening opening_crawl={thisFilm?.opening_crawl} />
         </div>
       </div>
+      
       <div>
         <h5 className="text-sm text-center m-3">Characters in this film</h5>
         <div className="flex flex-wrap flex-row gap-4 justify-center">

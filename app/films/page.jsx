@@ -1,11 +1,11 @@
 import Films from '@/app/films/Films';
 
-function page() {
+function filmsPage() {
   return (
-    <div className="flex flex-row flex-wrap justify-evenly xl:px-40 my-20 mx-5">
+    <div className="flex flex-row flex-wrap justify-evenly my-20 mx-4 md:mx-40">
       <Films />
     </div>
   );
 }
 
-export default page;
+export default filmsPage;

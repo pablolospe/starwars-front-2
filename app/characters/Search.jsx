@@ -17,7 +17,7 @@ function Search(props) {
   return (
 
     <div className="text-black flex items-center justify-center">
-      <div className="fixed top-20 rounded-sm flex items-center">
+      <div className="fixed top-20 rounded-sm flex items-center z-50">
         <input
           type="text"
           placeholder="Search character..."

@@ -1,20 +1,22 @@
+'use server'
+
 import Link from 'next/link';
 import { BsArrowLeftCircle } from 'react-icons/bs';
 import { getCharacters, getFilms, getPlanets } from '@/utils/fetch';
+import Image from 'next/image';
 
 async function Character({ params, children }) {
   const { id } = params;
   const allChar = await getCharacters();
   const thisChar= allChar.find(f => f.id === id)
-
+  
   const allFilms = await getFilms();
   const theseFilms = thisChar.films.map(f => parseInt(f))
   const result = allFilms.filter(f => theseFilms.includes(parseInt(f.id)));
-
+  
   const allPlanets = await getPlanets();
   const thisPlanet = parseInt(thisChar.homeworld)
   const planetName = allPlanets.find(p => thisPlanet == parseInt(p.id));
-
 
   return (
     <div className="mt-48 md:mt-20 flex justify-center items-center max-h-screen">
@@ -27,10 +29,11 @@ async function Character({ params, children }) {
       <div className="flex flex-col md:flex-row gap-10 self-center ">
         <div>
           <h1 className="text-3xl text-center m-2">{thisChar?.name}</h1>
-          <img
-            style={{ alignItems: 'center', maxHeight: '480px', width: 'auto' }}
+          <Image
             src={`https://starwars-visualguide.com/assets/img/characters/${thisChar?.id}.jpg`}
             alt={`Movie cover of '${thisChar?.title}'.`}
+            width={300}
+            height={500}
           />
         </div>
 
