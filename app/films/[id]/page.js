@@ -17,14 +17,14 @@ async function Film({ params }) {
   return (
     <div className="flex flex-row flex-wrap justify-center my-24 mx-4 md:mx-40">
 
-      {/* BACK BUTTON */}
+{/* BACK BUTTON */}
       <Link href="/films">
         <button className="fixed top-20 right-4 md:right-20 h-8 w-8 hover:scale-105 transition-transform">
           <BsArrowLeftCircle className="h-full w-full" />
         </button>
       </Link>
 
-      {/* TITLE INFO */}
+{/* TITLE INFO */}
       <div className="flex flex-col items-center">
         <h1 className="text-xl mt-1">{thisFilm?.title}</h1>
         <h5 className="text-sm font-light mt-1">Dir: {thisFilm?.director}</h5>
@@ -47,14 +47,15 @@ async function Film({ params }) {
           src={`https://starwars-visualguide.com/assets/img/films/${thisFilm?.id}.jpg`}
           alt={`Movie cover of '${thisFilm?.title}'.`}
         />
-
       </div>
 
+
+{/* CHARACTER CARDS */}
       <div>
         <h5 className="text-sm text-center m-3">Characters in this film</h5>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 justify-items-center">
           { }
-          {result.map((ch, index) => (
+          {result.map((ch) => (
             <Link href={`/characters/${ch.id}`} key={ch.id} >
 
               <Image
@@ -64,7 +65,7 @@ async function Film({ params }) {
                 width={150}
                 height={300}
               />
-              <p className='text-center'>{ch.name}</p>
+              <p className='text-center mt-1'>{ch.name}</p>
 
             </Link>
           ))}
