@@ -32,10 +32,7 @@ function Search(props) {
             ch.name.toLowerCase().includes(searchTerm.toLowerCase())
           )
           .map((ch) => (
-            <div
-              className="flex flex-col align-middle text-center"
-              key={ch.id}
-            >
+            <div className="flex flex-col align-middle text-center" key={ch.id} >
               <Link href={`/characters/${ch.id}`}>
 
                 <Image
@@ -43,10 +40,10 @@ function Search(props) {
                   src={`https://starwars-visualguide.com/assets/img/characters/${ch.id}.jpg`}
                   alt={`Character picture of '${ch.name}'.`}
                   width={150}
-                  height={300}
+                  height={206}
                 />
 
-                <h5 className="text-amarillo text-center mt-1">{ch.name}</h5>
+                <h5 className="text-amarillo text-center mt-1 ">{ch.name}</h5>
               </Link>
             </div>
           ))}
