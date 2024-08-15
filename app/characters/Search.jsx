@@ -12,7 +12,7 @@ function Search(props) {
 
   return (
     <div className="text-black flex items-center justify-center mx-4 md:mx-40 my-8">
-      <div className="fixed top-20 rounded-sm flex items-center z-50">
+      <div className="fixed top-20 rounded-sm flex items-center z-40">
         <input
           type="text"
           placeholder="Search character..."
