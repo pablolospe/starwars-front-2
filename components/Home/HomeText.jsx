@@ -29,9 +29,8 @@ function HomeText() {
           Explore detailed information about your favorite Star Wars characters
           and films.
         </li>
-
         <li>
-          Search for specific characters, films, or planets to quickly find the
+          Search for specific characters or films to quickly find the
           information you're looking for.
         </li>
         <li>
@@ -45,6 +44,9 @@ function HomeText() {
         about this beloved franchise, Star Wars MicroServices has got you
         covered. May the Force be with you!
       </p>
+      <br/>
+      
+      <small >PD: Nowadays the database is provided by a custom API build in next14.</small>
     </>
   );
 }
